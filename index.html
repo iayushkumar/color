@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+
+    <div class="flex flex-col items-center">
+        <textarea id="text" class="bg-black text-white p-4 m-4 resize-none" rows="4" cols="25"></textarea>
+
+        <div class="flex justify-center m-4 space-x-2">
+            <button id="a" class="color-btn bg-red-800 text-white px-6 py-2 rounded" type="button" onclick="handleClick('a')">Red</button>
+            <button id="b" class="color-btn bg-green-800 text-white px-6 py-2 rounded" type="button" onclick="handleClick('b')">Green</button>
+            <button id="c" class="color-btn bg-pink-300 text-white px-6 py-2 rounded" type="button" onclick="handleClick('c')">Pink</button>
+            <button id="d" class="color-btn bg-gray-300 text-white px-6 py-2 rounded" type="button" onclick="handleClick('d')">Silver</button>
+            <button id="e" class="color-btn bg-blue-800 text-white px-6 py-2 rounded" type="button" onclick="handleClick('e')">Blue</button>
+            <button id="f" class="color-btn bg-blue-300 text-white px-6 py-2 rounded" type="button" onclick="handleClick('f')">Sky Blue</button>
+            <button id="g" class="color-btn bg-yellow-500 text-white px-6 py-2 rounded" type="button" onclick="handleClick('g')">Yellow</button>
+            <button id="h" class="color-btn bg-indigo-600 text-white px-6 py-2 rounded" type="button" onclick="handleClick('h')">Indigo</button>
+            <button id="i" class="color-btn bg-purple-800 text-white px-6 py-2 rounded" type="button" onclick="handleClick('i')">Purple</button>
+            <!-- Additional Color Button -->
+
+            <button id="j" class="color-btn" style="background-color: #FFA500; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem;" type="button" onclick="handleClick('j')">Orange</button>
+
+        </div>
+    </div>
+
+    <script>
+        const handleClick = (buttonId) => {
+            const element = document.getElementById(buttonId);
+            const computedStyle = window.getComputedStyle(element);
+            const color = computedStyle.backgroundColor;
+            document.getElementById('text').style.backgroundColor = color;
+        }
+    </script>
+       
+</body>
+</html>
